@@ -4,10 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PacientesService } from '../pacientes.service';
 import { Paciente } from '../paciente.model';
+import { NgxMaskDirective } from 'ngx-mask';
 
 @Component({
   selector: 'app-edicao',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule,NgxMaskDirective],
   templateUrl: './edicao.component.html',
   styleUrl: './edicao.component.css',
 })
@@ -47,4 +48,12 @@ export class EdicaoComponent implements OnInit {
         this.router.navigate(['/listagem']);
       });
   }
+
+   deletar(): void {
+    if (confirm('Tem certeza que deseja excluir este Paciente?')) {
+      this.paacienteService.deletarPaciente  (this.id).subscribe(() => {
+        this.router.navigate(['/listagem']);
+      });
+    }
+  }
 }

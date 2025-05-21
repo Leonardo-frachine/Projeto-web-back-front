@@ -1,5 +1,3 @@
-
-
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-6">
@@ -14,7 +12,8 @@
               class="form-control"
               id="inputNome4"
               name="nome"
-              [(ngModel)]="paciente.nome" />
+              [(ngModel)]="paciente.nome"
+            />
           </div>
 
           <div class="mb-3">
@@ -24,7 +23,8 @@
               class="form-control"
               id="inputIdade"
               name="idade"
-              [(ngModel)]="paciente.idade" />
+              [(ngModel)]="paciente.idade"
+            />
           </div>
 
           <div class="mb-3">
@@ -34,7 +34,10 @@
               class="form-control"
               id="inputTelefone"
               name="telefone"
-              [(ngModel)]="paciente.telefone" />
+              [(ngModel)]="paciente.telefone"
+              mask="(00) 00000-0000"
+              [dropSpecialCharacters]="false"
+            />
           </div>
 
           <div class="mb-3">
@@ -44,11 +47,21 @@
               class="form-control"
               id="inputEndereco"
               name="endereco"
-              [(ngModel)]="paciente.endereco" />
+              [(ngModel)]="paciente.endereco"
+            />
           </div>
 
           <div class="text-center">
-            <button type="submit" class="btn btn-outline-success">Salvar</button>
+            <button type="submit" class="btn btn-outline-success">
+              Salvar
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-danger"
+              (click)="deletar()"
+            >
+              Deletar
+            </button>
           </div>
         </form>
       </div>

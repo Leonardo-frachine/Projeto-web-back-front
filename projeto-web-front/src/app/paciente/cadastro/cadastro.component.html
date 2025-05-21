@@ -29,13 +29,14 @@
           <div class="mb-3">
             <label for="telefone" class="form-label">Telefone:</label>
             <input
- placeholder="(00) 00000-0000"
-  type="text"
-  class="form-control"
-  id="telefone"
-  name="telefone"
-  [(ngModel)]="paciente.telefone"
-  mask="(00) 00000-0000" />
+              placeholder="(00) 00000-0000"
+              type="text"
+              class="form-control"
+              id="telefone"
+              name="telefone"
+              [(ngModel)]="paciente.telefone"
+              mask="(00) 00000-0000"
+              [dropSpecialCharacters]="false" />
           </div>
 
           <div class="mb-3">

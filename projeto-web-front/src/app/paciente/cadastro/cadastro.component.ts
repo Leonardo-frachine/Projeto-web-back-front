@@ -4,12 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { Paciente } from '../paciente.model';
 import { PacientesService } from '../pacientes.service';
 import { Router } from '@angular/router';
+import { NgxMaskDirective } from 'ngx-mask';
 
 @Component({
   selector: 'app-cadastro',
-  imports: [CommonModule,FormsModule],
+  standalone: true,
+  imports: [CommonModule,FormsModule,NgxMaskDirective],
   templateUrl: './cadastro.component.html',
-  styleUrl: './cadastro.component.css'
+  styleUrl: './cadastro.component.css',
+  
 })
 export class CadastroComponent {
 
