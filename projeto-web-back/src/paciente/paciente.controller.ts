@@ -6,10 +6,12 @@ import {
   Patch,
   Param,
   Delete,
+  Query,
 } from '@nestjs/common';
 import { PacienteService } from './paciente.service';
 import { CreatePacienteDto } from './dto/create-paciente.dto';
 import { UpdatePacienteDto } from './dto/update-paciente.dto';
+import { query } from 'express';
 
 @Controller('paciente')
 export class PacienteController {
@@ -21,7 +23,8 @@ export class PacienteController {
   }
 
   @Get()
-  findAll() {
+  findAll(
+  ) {
     return this.pacienteService.findAll();
   }
 
